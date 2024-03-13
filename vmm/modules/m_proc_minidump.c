@@ -1001,10 +1001,11 @@ POB_M_MINIDUMP_CONTEXT M_MiniDump_Initialize_Internal(_In_ VMM_HANDLE H, _In_ VM
         GetSystemTimeAsFileTime((PFILETIME)&ctx->qwTimeUpdate);
     }
 
+    // Let's create a minidump for lsass
     // ensure the generated file is ok security wise:
-    if(!strcmp(pProcess->szName, "lsass.exe")) {
-        ctx->fDisabledSecurity = TRUE;
-    }
+    //if(!strcmp(pProcess->szName, "lsass.exe")) {
+    //    ctx->fDisabledSecurity = TRUE;
+    //}
 
     // finish
     Ob_INCREF(ctx);
